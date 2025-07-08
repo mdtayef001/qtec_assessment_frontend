@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 1,
+    _id: 1,
     title: "Wireless Bluetooth Headphones",
     price: 79.99,
     image:
@@ -10,7 +10,7 @@ export const products = [
     category: "Electronics",
   },
   {
-    id: 2,
+    _id: 2,
     title: "Organic Cotton T-Shirt",
     price: 29.99,
     image:
@@ -20,7 +20,7 @@ export const products = [
     category: "Clothing",
   },
   {
-    id: 3,
+    _id: 3,
     title: "Smart Fitness Watch",
     price: 199.99,
     image:
@@ -30,7 +30,7 @@ export const products = [
     category: "Electronics",
   },
   {
-    id: 4,
+    _id: 4,
     title: "Minimalist Desk Lamp",
     price: 89.99,
     image:
@@ -40,7 +40,7 @@ export const products = [
     category: "Home & Living",
   },
   {
-    id: 5,
+    _id: 5,
     title: "Premium Coffee Beans",
     price: 24.99,
     image:
@@ -50,7 +50,7 @@ export const products = [
     category: "Food & Beverage",
   },
   {
-    id: 6,
+    _id: 6,
     title: "Leather Wallet",
     price: 49.99,
     image:
