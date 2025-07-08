@@ -25,7 +25,11 @@ const CartProvider = ({ children }) => {
       }
     });
   };
-  console.log(cartItem);
+
+  const cartTotal = cartItem.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   const value = {
     cartCount,
@@ -33,6 +37,8 @@ const CartProvider = ({ children }) => {
     AddToCart,
     cartItem,
     products,
+    cartTotal,
+    setCartItem,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

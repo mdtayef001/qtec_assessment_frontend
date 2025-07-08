@@ -7,7 +7,7 @@ import CheckOutModal from "./CheckOutModal";
 const CartSlider = ({ isOpen, setIsSlider }) => {
   const { cartItem } = useCart();
 
-  let [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function open() {
     setIsModalOpen(true);
@@ -117,7 +117,11 @@ const CartSlider = ({ isOpen, setIsSlider }) => {
               </Button>
             </div>
           )}
-          <CheckOutModal isOpen={isModalOpen} close={close} />
+          <CheckOutModal
+            isOpen={isModalOpen}
+            close={close}
+            setIsSlider={setIsSlider}
+          />
         </div>
       </div>
     </>
