@@ -1,12 +1,56 @@
-# React + Vite
+# ShopEase 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Demo 👉 [shopease.live](https://shopeasetayef.netlify.app/)**
 
-Currently, two official plugins are available:
+ShopEase is a sleek and modern e-commerce platform where users can browse, select, and purchase single or multiple products with ease. Built for seamless user experience and fast performance, ShopEase combines a stylish UI with smooth navigation and powerful features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Browse a variety of products
+- Add single or multiple items to cart
+- Smooth checkout experience
+- Responsive design for mobile and desktop
+- Interactive UI components
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+- **React** – Front-end library for building UI
+- **JavaScript (JS)** – Core language
+- **Vite** – Lightning-fast build tool
+- **Tailwind CSS** – Utility-first CSS framework for styling
+- **React Router** – Client-side routing
+- **Headless UI** – Accessible, unstyled UI primitives
+- **React Hot Toast** – Notifications and alerts
+- **Swiper** – Modern touch slider for product carousels
+- **Lucide React** – Beautiful, customizable icons
+
+## 💻 How to Run Locally
+
+1. **Install dependencies:**
+
+   ```bash
+   git clone https://github.com/your-username/shopease.git
+   cd shopease
+
+   ```
+
+2. **Clone the repository:**
+
+   ```bash
+   npm install
+
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+
+   ```
+
+4. **Open the app in your browser:**
+
+   ```bash
+   Go to  http://localhost:5173
+
+   ```

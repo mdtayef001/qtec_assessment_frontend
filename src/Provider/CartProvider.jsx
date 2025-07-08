@@ -34,16 +34,15 @@ const CartProvider = ({ children }) => {
   };
 
   const updateQuantity = (productId, quantity) => {
-    console.log(productId, quantity);
-    if (quantity <= 0) {
-      removeFromCart(productId);
-      return;
-    }
     setCartItem((prevItem) =>
       prevItem.map((item) =>
         item._id === productId ? { ...item, quantity } : item
       )
     );
+    if (quantity <= 0) {
+      removeFromCart(productId);
+      return;
+    }
   };
 
   const cartTotal = cartItem.reduce(
