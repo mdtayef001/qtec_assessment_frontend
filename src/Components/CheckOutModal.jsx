@@ -7,7 +7,7 @@ import { CheckCircle, FastForward, X } from "lucide-react";
 const CheckOutModal = ({ isOpen, close, setIsSlider }) => {
   const [orderComplete, setOrderComplete] = useState(false);
 
-  const { cartItem, cartTotal, setCartItem, setCartCount } = useCart();
+  const { cartItem, cartTotal, setCartItem } = useCart();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ const CheckOutModal = ({ isOpen, close, setIsSlider }) => {
     setTimeout(() => {
       setOrderComplete(false);
       setCartItem([]);
-      setCartCount(0);
+
       close();
       setIsSlider(false);
     }, 3000);
@@ -54,7 +54,7 @@ const CheckOutModal = ({ isOpen, close, setIsSlider }) => {
                         <p className="text-sm text-gray-700">
                           Order Total:{" "}
                           <span className="font-bold text-primary">
-                            {cartTotal}
+                            {Math.ceil(cartTotal)}
                           </span>
                         </p>
                       </div>
@@ -90,7 +90,7 @@ const CheckOutModal = ({ isOpen, close, setIsSlider }) => {
                         <div className="flex justify-between font-bold text-lg mt-3 pt-3 border-t  border-gray-300">
                           <span>Total:</span>
                           <span className="text-primary">
-                            ${cartTotal.toFixed(2)}
+                            ${Math.round(cartTotal)}
                           </span>
                         </div>
                       </div>
@@ -127,7 +127,7 @@ const CheckOutModal = ({ isOpen, close, setIsSlider }) => {
                         </div>
 
                         <button className="w-full bg-black hover:bg-black/90 text-white py-4 rounded-lg cursor-pointer">
-                          Place Order - $${cartTotal}
+                          Place Order - ${Math.round(cartTotal)}
                         </button>
                       </form>
                     </>

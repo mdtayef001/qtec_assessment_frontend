@@ -5,7 +5,7 @@ import { useState } from "react";
 import CheckOutModal from "./CheckOutModal";
 
 const CartSlider = ({ isOpen, setIsSlider }) => {
-  const { cartItem } = useCart();
+  const { cartItem, removeFromCart, cartTotal } = useCart();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -90,8 +90,8 @@ const CartSlider = ({ isOpen, setIsSlider }) => {
                       </button>
                     </div>
                     <button
-                      //   onClick={() => removeFromCart(item.id)}
-                      className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                      onClick={() => removeFromCart(item._id)}
+                      className="text-red-500 hover:text-red-700 hover:bg-red-50 cursor-pointer"
                     >
                       <X className="h-4 w-4" />
                     </button>
@@ -106,7 +106,7 @@ const CartSlider = ({ isOpen, setIsSlider }) => {
               <div className="flex items-center justify-between text-xl font-bold">
                 <span>Total:</span>
                 {/* <span className="text-primary">${cartTotal.toFixed(2)}</span> */}
-                <span className="text-primary">$200</span>
+                <span className="text-primary">${Math.round(cartTotal)}</span>
               </div>
 
               <Button

@@ -4,12 +4,9 @@ import toast from "react-hot-toast";
 import { products } from "../assets/products";
 
 const CartProvider = ({ children }) => {
-  const [cartCount, setCartCount] = useState(0);
   const [cartItem, setCartItem] = useState([]);
 
   const AddToCart = (product) => {
-    setCartCount(cartCount + 1);
-
     setCartItem((prevItems) => {
       const existingItem = prevItems.find((item) => item._id === product._id);
       if (existingItem) {
@@ -26,19 +23,31 @@ const CartProvider = ({ children }) => {
     });
   };
 
+  const removeFromCart = (productId) => {
+    setCartItem((prevItems) => {
+      const item = prevItems.find((item) => item._id === productId);
+      if (item) {
+        toast.success("Removed From Cart");
+      }
+      return prevItems.filter((item) => item._id !== productId);
+    });
+  };
+
   const cartTotal = cartItem.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
+  const cartCount = cartItem.reduce((count, item) => count + item.quantity, 0);
+
   const value = {
     cartCount,
-    setCartCount,
     AddToCart,
     cartItem,
     products,
     cartTotal,
     setCartItem,
+    removeFromCart,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
