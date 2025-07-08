@@ -7,7 +7,7 @@ const HomeLayout = () => {
       <header className="container mx-auto">
         <Navbar />
       </header>
-      <main className="container mx-auto">
+      <main>
         <Outlet />
       </main>
     </>
