@@ -5,7 +5,7 @@ import { useState } from "react";
 import CheckOutModal from "./CheckOutModal";
 
 const CartSlider = ({ isOpen, setIsSlider }) => {
-  const { cartItem, removeFromCart, cartTotal } = useCart();
+  const { cartItem, removeFromCart, cartTotal, updateQuantity } = useCart();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -68,14 +68,14 @@ const CartSlider = ({ isOpen, setIsSlider }) => {
                       <h3 className="font-medium text-gray-900 mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-600">
-                        ${item.price.toFixed(2)}
-                      </p>
+                      <p className="text-sm text-gray-600">${item.price}</p>
                     </div>
                     <div className="flex items-center space-x-2">
                       <button
-                        // onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="h-8 w-8 p-0"
+                        onClick={() =>
+                          updateQuantity(item._id, item.quantity - 1)
+                        }
+                        className="h-8 w-8 p-0 cursor-pointer"
                       >
                         <Minus className="h-3 w-3" />
                       </button>
@@ -83,8 +83,10 @@ const CartSlider = ({ isOpen, setIsSlider }) => {
                         {item.quantity}
                       </span>
                       <button
-                        // onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="h-8 w-8 p-0"
+                        onClick={() =>
+                          updateQuantity(item._id, item.quantity + 1)
+                        }
+                        className="h-8 w-8 p-0 cursor-pointer"
                       >
                         <Plus className="h-3 w-3" />
                       </button>

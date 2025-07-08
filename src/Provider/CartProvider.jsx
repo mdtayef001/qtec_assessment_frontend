@@ -33,6 +33,19 @@ const CartProvider = ({ children }) => {
     });
   };
 
+  const updateQuantity = (productId, quantity) => {
+    console.log(productId, quantity);
+    if (quantity <= 0) {
+      removeFromCart(productId);
+      return;
+    }
+    setCartItem((prevItem) =>
+      prevItem.map((item) =>
+        item._id === productId ? { ...item, quantity } : item
+      )
+    );
+  };
+
   const cartTotal = cartItem.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -48,6 +61,7 @@ const CartProvider = ({ children }) => {
     cartTotal,
     setCartItem,
     removeFromCart,
+    updateQuantity,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
