@@ -7,7 +7,7 @@ const Navbar = () => {
   const [cartCount, setCartCount] = useState(1);
 
   return (
-    <nav className="px-4 py-4 md:px-0 flex items-center justify-between md:py-5">
+    <nav className="container mx-auto px-4 py-4 md:px-0 flex items-center justify-between md:py-5 ">
       {/* logo */}
       <Link to={"/"} className="hover:opacity-80 transition-opacity">
         <h1 className="flex items-center justify-center gap-2 text-xl font-bold">

@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 const HomeLayout = () => {
   return (
     <>
-      <header className="container mx-auto">
+      <header className=" sticky top-0 z-50 bg-white shadow-md">
         <Navbar />
       </header>
       <main>
