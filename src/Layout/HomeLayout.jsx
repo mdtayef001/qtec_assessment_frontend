@@ -4,10 +4,10 @@ import Navbar from "../Components/Navbar";
 const HomeLayout = () => {
   return (
     <>
-      <header>
+      <header className="container mx-auto">
         <Navbar />
       </header>
-      <main>
+      <main className="container mx-auto">
         <Outlet />
       </main>
     </>
