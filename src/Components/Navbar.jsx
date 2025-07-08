@@ -2,6 +2,7 @@ import { HomeIcon, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useCart from "../Hooks/useCart";
+import CartSlider from "./CartSlider";
 
 const Navbar = () => {
   const [isSlider, setIsSlider] = useState(false);
@@ -36,6 +37,7 @@ const Navbar = () => {
           </button>
         </li>
       </ul>
+      <CartSlider isOpen={isSlider} setIsSlider={setIsSlider} />
     </nav>
   );
 };

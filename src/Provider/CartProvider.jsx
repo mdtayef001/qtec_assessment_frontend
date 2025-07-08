@@ -1,25 +1,27 @@
 import { useState } from "react";
 import CartContext from "../Context/CartContext";
 import toast from "react-hot-toast";
+import { products } from "../assets/products";
 
 const CartProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [cartItem, setCartItem] = useState([]);
 
-  const AddToCart = (itemID) => {
+  const AddToCart = (product) => {
     setCartCount(cartCount + 1);
-    setCartItem((prevItem) => {
-      const existingItem = prevItem.find((item) => item.itemID === itemID);
+
+    setCartItem((prevItems) => {
+      const existingItem = prevItems.find((item) => item._id === product._id);
       if (existingItem) {
-        toast.success("Updated The Cart");
-        return prevItem.map((item) =>
-          item.itemID === itemID
+        toast.success("Updated Cart");
+        return prevItems.map((item) =>
+          item._id === product._id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        toast.success("Added to Cart");
-        return [...prevItem, { itemID, quantity: 1 }];
+        toast.success("Added Cart");
+        return [...prevItems, { ...product, quantity: 1 }];
       }
     });
   };
@@ -30,6 +32,7 @@ const CartProvider = ({ children }) => {
     setCartCount,
     AddToCart,
     cartItem,
+    products,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

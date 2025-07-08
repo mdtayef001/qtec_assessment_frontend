@@ -5,7 +5,7 @@ import ProductCart from "./ProductCart";
 
 const Products = () => {
   return (
-    <section className="container mx-auto mt-20">
+    <section className="container mx-auto lg:mt-20 mt-10 px-4">
       <div>
         <h1 className="text-3xl font-bold text-center">Featured Products</h1>
         <p className="text-xl font-medium text-center mt-4">

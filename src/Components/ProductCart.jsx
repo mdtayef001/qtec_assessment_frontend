@@ -7,7 +7,7 @@ const ProductCart = ({ item }) => {
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    AddToCart(item._id);
+    AddToCart(item);
   };
 
   return (
