@@ -1,8 +1,21 @@
 import { Minus, Plus, ShoppingBag, X } from "lucide-react";
 import useCart from "../Hooks/useCart";
+import { Button } from "@headlessui/react";
+import { useState } from "react";
+import CheckOutModal from "./CheckOutModal";
 
 const CartSlider = ({ isOpen, setIsSlider }) => {
   const { cartItem } = useCart();
+
+  let [isModalOpen, setIsModalOpen] = useState(true);
+
+  function open() {
+    setIsModalOpen(true);
+  }
+
+  function close() {
+    setIsModalOpen(false);
+  }
   return (
     <>
       {isOpen && (
@@ -95,14 +108,16 @@ const CartSlider = ({ isOpen, setIsSlider }) => {
                 {/* <span className="text-primary">${cartTotal.toFixed(2)}</span> */}
                 <span className="text-primary">$200</span>
               </div>
-              <button
-                // onClick={handleCheckout}
+
+              <Button
+                onClick={open}
                 className="w-full bg-black hover:bg-black/90 text-white py-4 rounded-lg"
               >
                 Proceed to Checkout
-              </button>
+              </Button>
             </div>
           )}
+          <CheckOutModal isOpen={isModalOpen} close={close} />
         </div>
       </div>
     </>
