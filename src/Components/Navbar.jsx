@@ -1,10 +1,11 @@
 import { HomeIcon, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useCart from "../Hooks/useCart";
 
 const Navbar = () => {
   const [isSlider, setIsSlider] = useState(false);
-  const [cartCount, setCartCount] = useState(1);
+  const { cartCount } = useCart();
 
   return (
     <nav className="container mx-auto px-4 py-4 md:px-0 flex items-center justify-between md:py-5 ">

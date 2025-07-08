@@ -1,14 +1,13 @@
 import { Plus } from "lucide-react";
 import { Link } from "react-router-dom";
+import useCart from "../Hooks/useCart";
 
 const ProductCart = ({ item }) => {
-  const cart = [];
-  const handleAddToCart = (e, productId) => {
+  const { AddToCart } = useCart();
+  const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    cart.push(productId);
-    // Logic to add the product to the cart
-    console.log(`Product with ID ${productId} added to cart`, cart);
+    AddToCart(item._id);
   };
 
   return (
@@ -38,7 +37,7 @@ const ProductCart = ({ item }) => {
             </span>
           </div>
           <button
-            onClick={(e) => handleAddToCart(e, item?._id)}
+            onClick={(e) => handleAddToCart(e)}
             className="w-full bg-black hover:bg-black/90 text-white transition-colors p-2 mt-3 flex justify-center items-center gap-2 rounded-lg cursor-pointer"
           >
             <span>
