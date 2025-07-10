@@ -49,7 +49,7 @@ const Hero = () => {
               <span>
                 <ShoppingCartIcon />
               </span>
-              Add to cart
+              Order Now
               </button>
           </div>
             <div>

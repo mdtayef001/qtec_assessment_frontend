@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { products } from "../assets/products";
-import { ArrowLeft, Plus, Star } from "lucide-react";
+import { ArrowLeft,ShoppingCartIcon, Star } from "lucide-react";
 import useCart from "../Hooks/useCart";
 
 const ProductDetails = () => {
@@ -8,7 +8,8 @@ const ProductDetails = () => {
   const { id } = useParams();
   const product = products.find((i) => i._id === parseInt(id));
   return (
-    <section className="container mx-auto mt-10 px-4">
+    <>
+      <section className="container mx-auto mt-10 px-4">
       <button className="mb-6">
         <Link
           to={"/"}
@@ -19,9 +20,9 @@ const ProductDetails = () => {
         </Link>
       </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="rounded-2xl shadow-lg overflow-hidden">
-          <div className="aspect-square">
+          <div className="h-full">
             <img
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               src={product.image}
@@ -29,7 +30,7 @@ const ProductDetails = () => {
             />
           </div>
         </div>
-        <div className="space-y-6">
+        <div className="space-y-6 col-span-2">
           <div>
             <p className="mb-4">{product.category}</p>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -84,7 +85,7 @@ const ProductDetails = () => {
               onClick={() => AddToCart(product)}
               className="w-full bg-blue-500 hover:bg-blue-300 text-white text-lg flex items-center justify-center gap-2.5 py-3 rounded-lg cursor-pointer"
             >
-              <Plus className="h-5 w-5 mr-2" />
+              <ShoppingCartIcon className="h-5 w-5 mr-2" />
               <span>Add to Cart - ${product.price.toFixed(2)}</span>
             </button>
           </div>
@@ -105,6 +106,8 @@ const ProductDetails = () => {
         </div>
       </div>
     </section>
+    </>
+  
   );
 };
 
