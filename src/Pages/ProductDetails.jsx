@@ -82,7 +82,7 @@ const ProductDetails = () => {
 
             <button
               onClick={() => AddToCart(product)}
-              className="w-full bg-black hover:bg-black/90 text-white text-lg flex items-center justify-center gap-2.5 py-3 rounded-lg cursor-pointer"
+              className="w-full bg-blue-500 hover:bg-blue-300 text-white text-lg flex items-center justify-center gap-2.5 py-3 rounded-lg cursor-pointer"
             >
               <Plus className="h-5 w-5 mr-2" />
               <span>Add to Cart - ${product.price.toFixed(2)}</span>

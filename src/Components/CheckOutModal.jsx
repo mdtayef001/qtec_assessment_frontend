@@ -126,7 +126,7 @@ const CheckOutModal = ({ isOpen, close, setIsSlider }) => {
                           />
                         </div>
 
-                        <button className="w-full bg-black hover:bg-black/90 text-white py-4 rounded-lg cursor-pointer">
+                        <button className="w-full bg-blue-500 hover:bg-blue-300 text-white py-4 rounded-lg cursor-pointer">
                           Place Order - ${Math.round(cartTotal)}
                         </button>
                       </form>
