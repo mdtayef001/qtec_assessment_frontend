@@ -22,7 +22,7 @@ const ProductDetails = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="rounded-2xl shadow-lg overflow-hidden">
-          <div className="h-full">
+          <div className="h-full w-full ">
             <img
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               src={product.image}
@@ -30,9 +30,9 @@ const ProductDetails = () => {
             />
           </div>
         </div>
-        <div className="space-y-6 col-span-2">
+        <div className="space-y-6 col-span-2 border border-blue-200 p-3 rounded-2xl">
           <div>
-            <p className="mb-4">{product.category}</p>
+            <span className="mb-4 text-xs  bg-blue-200 p-1 rounded-lg">{product.category}</span>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {product.title}
             </h1>
@@ -40,7 +40,7 @@ const ProductDetails = () => {
               <span className="text-4xl font-bold text-primary">
                 ${product.price.toFixed(2)}
               </span>
-              <div className="flex items-center space-x-1">
+              <div className="flex flex-wrap  items-center space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -52,7 +52,7 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-lg">
+          <div className="bg-white p-6 rounded-2xl ">
             <h2 className="text-xl font-semibold mb-4">Product Description</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
               {product.description}
@@ -90,14 +90,14 @@ const ProductDetails = () => {
             </button>
           </div>
 
-          {/* Additional Info */}
+          
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white p-4 rounded-xl shadow-md text-center">
+            <div className="bg-white p-4  text-center">
               <div className="text-2xl mb-2">🚚</div>
               <p className="text-sm font-medium">Free Shipping</p>
               <p className="text-xs text-gray-600">On orders over $50</p>
             </div>
-            <div className="bg-white p-4 rounded-xl shadow-md text-center">
+            <div className="bg-white p-4  text-center">
               <div className="text-2xl mb-2">↩️</div>
               <p className="text-sm font-medium">Easy Returns</p>
               <p className="text-xs text-gray-600">30-day return policy</p>

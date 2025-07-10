@@ -58,7 +58,7 @@ const Hero = () => {
         </section>
       </SwiperSlide>
         <SwiperSlide>
-<section className="bg-red-200 md:py-40 py-20 px-4 lg:flex items-center justify-center">
+<section className="bg-blue-200  md:py-40 py-20 px-4 lg:flex items-center justify-center">
           <div>
             <h1 className="text-3xl md:text-6xl font-bold text-black ">
                 Welcome to ShopEase
@@ -86,7 +86,7 @@ const Hero = () => {
         </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="bg-red-200 md:py-40 py-20 px-4 lg:flex items-center justify-center">
+          <section className="bg-blue-200  md:py-40 py-20 px-4 lg:flex items-center justify-center">
           <div>
             <h1 className="text-3xl md:text-6xl font-bold text-black ">
                 Welcome to ShopEase
