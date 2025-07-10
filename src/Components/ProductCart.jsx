@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react";
+import { Plus, ShoppingCartIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 
@@ -32,16 +32,16 @@ const ProductCart = ({ item }) => {
             <span className="text-2xl font-bold text-primary">
               ${item?.price}
             </span>
-            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+            <span className="text-xs text-gray-500 bg-blue-200 px-2 py-1 rounded-full">
               {item?.category}
             </span>
           </div>
           <button
             onClick={(e) => handleAddToCart(e)}
-            className="w-full bg-black hover:bg-black/90 text-white transition-colors p-2 mt-3 flex justify-center items-center gap-2 rounded-lg cursor-pointer"
+            className="w-full bg-blue-500 hover:bg-blue-300 text-white transition-colors p-2 mt-3 flex justify-center items-center gap-2 rounded-lg cursor-pointer"
           >
             <span>
-              <Plus />
+              <ShoppingCartIcon />
             </span>
             Add to cart
           </button>

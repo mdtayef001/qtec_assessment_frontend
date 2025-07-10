@@ -14,7 +14,7 @@ const Navbar = () => {
       <Link to={"/"} className="hover:opacity-80 transition-opacity">
         <h1 className="flex items-center justify-center gap-2 text-xl font-bold">
           <HomeIcon />
-          ShopEase
+          ShopMotto
         </h1>
       </Link>
       {/* links */}
