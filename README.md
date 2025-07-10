@@ -1,6 +1,6 @@
-# ShopEase 🛒
+# ShopMotto 🛒
 
-**Live Demo 👉 [shopease.live](https://shopeasetayef.netlify.app/)**
+**Live Demo 👉 [ShopMotto.live](https://shopeasetayef.netlify.app/)**
 
 ShopEase is a sleek and modern e-commerce platform where users can browse, select, and purchase single or multiple products with ease. Built for seamless user experience and fast performance, ShopEase combines a stylish UI with smooth navigation and powerful features.
 
